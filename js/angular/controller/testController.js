@@ -24,6 +24,8 @@ angular.module("richiesteReteApp").controller("testController", ['$scope', '$htt
     }
 
 
+    $scope.pippo = "{color:'red'}";
+
     $scope.nodoSelezionato = function(n){
         var tuttiSelezionati = true;
         var almenoUnoSelezionato = false;

@@ -12,11 +12,11 @@
             </div>
 
             <div class="row">
-                <ul>
+                <ul style="list-style-type: square;">
                     <li ng-repeat="n in risultato">
-                        {{n.nodo}} <a href="" ng-click="toggle(n)">-</a>
-                        <ul ng-show="n.aperto">
-                            <li ng-repeat="f in n.foglie">{{f}}</li>
+                        {{n.nodo}} <a href="" ng-click="toggle(n)">- pippo</a>
+                        <ul  ng-show="n.aperto">
+                            <li ng-repeat="f in n.foglie">{{f.nome}}</li>
                         </ul>
                     </li>
                 </ul>
