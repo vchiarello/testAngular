@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>Richiesta</title>
+
+<!-- Bootstrap Core CSS -->
+<link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- MetisMenu CSS -->
+<link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+
+<!-- DataTables CSS -->
+<link href="../vendor/datatables-plugins/dataTables.bootstrap.css"
+	rel="stylesheet">
+
+<!-- DataTables Responsive CSS -->
+<link href="../vendor/datatables-responsive/dataTables.responsive.css"
+	rel="stylesheet">
+
+<!-- Custom CSS -->
+<link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+
+<!-- Custom Fonts -->
+<link href="../vendor/font-awesome/css/font-awesome.min.css"
+	rel="stylesheet" type="text/css">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+	<div id="wrapper">
+		<form action="">
+
+
+		<div id="page-wrapper">
+			<div class="row">
+				<div class="col-lg-9"
+					style="position: fixed; top: 45px; z-index: 100;" align="center">
+					        					
+					<h1 style="margin-top: 5px">
+						<a ui-sref="tabella({stato:'Home'})" class="btn btn-primary" style="background-color: #f0ad4e; border-color: #eea236;">Chiudi</a>
+<!-- 						<button ng-click="chiudi()" class="btn btn-primary" style="background-color: #f0ad4e;border-color: #eea236;">Chiudi</button>  -->
+						<button type="submit" ng-click="salva(richiestaReteBean)" class="btn btn-primary" style="background-color: #5cb85c; border-color: #5cb85c">Salva</button>
+						<button ng-click="home.nuovaRichiesta()" class="btn btn-primary">Invia</button>
+						<a ui-sref="tabella({stato:'Home'})" class="btn btn-primary" style="background-color: #d43f3a; border-color: #eea236;">Elimina</a>
+<!-- 						<button ng-click="home.nuovaRichiesta()" class="btn btn-primary" style="background-color: #d9534f; border-color: #d43f3a;">Elimina</button> -->
+						<button ng-click="home.nuovaRichiesta()" class="btn btn-primary"
+							style="background-color: #5cb85c; border-color: #5cb85c">Aggiungi
+							sistema</button>
+					</h1>
+				</div>
+			</div>
+
+			<div class="row">
+				<div align="center" style="color: red; margin-top: 45px">
+					Bozza</div>
+			</div>
+
+			<div class="row" style="margin-top: 28px">
+				<div class="col-lg-2 col-lg-offset-2">
+					<strong>Azienda </strong>
+				</div>
+				<div class="col-lg-7">
+					<div ng-init="richiestaReteBean.azienda=1">
+						<label class="radio-inline"><input type="radio" ng-model="richiestaReteBean.azienda" value="1" >Sara Assicurazioni s.p.a</label> 
+						<label class="radio-inline"><input type="radio" ng-model="richiestaReteBean.azienda" value="2" >Sara Vita</label>
+					</div>	
+				</div>
+			</div>
+
+			<div class="row" style="margin-top: 15px">
+				<div class="col-lg-2 col-lg-offset-2">
+					<strong>*Motivo</strong>
+				</div>
+				<div class="col-lg-5">
+					<input type="text" ng-model="richiestaReteBean.motivo" class="form-control" id="motivo" >
+				</div>
+			</div>
+
+			<div class="row" style="margin-top: 15px">
+				<div class="col-lg-2 col-lg-offset-2">
+					<strong>Servizio</strong>
+				</div>
+				<div class="col-lg-5">
+					<div class="form-group">
+						<label for="sel1"></label> <select class="" id="sel1">
+							<option> --- Selezionare un valore --- </option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+						</select>
+					</div>
+				</div>
+			</div>
+
+			<div class="row" style="margin-top: 15px">
+				<div class="col-lg-2 col-lg-offset-2">
+					<strong>Responsabile </strong>
+				</div>
+
+				<div class="col-lg-4">
+					<input ng-model="richiestaReteBean.responsabile" type="text" class="form-control" id="responsabile">
+					Indicare il Responsabile dell’ufficio di appartenenza
+				</div>
+				<div class="col-sx-1">
+					<a class="glyphicon glyphicon-user"></a>
+				</div>
+
+
+			</div>
+
+			<div class="row" style="margin-top: 15px">
+				<div class="col-lg-2 col-lg-offset-2">
+					<strong>Richiedente </strong>
+				</div>
+				<div class="col-lg-4">
+					<input ng-model="richiestaReteBean.richiedente" type="text" class="form-control" id="richiedente">
+					Indicare il Richiedente
+				</div>
+				<div class="col-sx-1">
+					<a class="glyphicon glyphicon-user"></a>
+				</div>
+			</div>
+
+			<div class="row" style="margin-top: 15px">
+				<div class="col-lg-2 col-lg-offset-2">
+					<strong>Telefono</strong>
+				</div>
+				<div class="col-lg-5">
+					<input ng-model="richiestaReteBean.telefono" type="text" class="form-control" id="telefono">
+				</div>
+			</div>
+
+			<div class="row" style="margin-top: 15px">
+				<div class="col-lg-2 col-lg-offset-2">
+					<strong>Mail</strong>
+				</div>
+				<div class="col-lg-5">
+					<input ng-model="richiestaReteBean.mail" type="text" class="form-control" id="mail">
+				</div>
+			</div>
+
+			<div class="row" style="margin-top: 15px">
+				<div class="col-lg-2 col-lg-offset-2">
+					<strong>Data e ora richiesta</strong>
+				</div>
+				<div class="col-lg-5">
+					 {{date | date:'dd/MM/yyyy HH:mm:ss'}}					
+				</div>
+			</div>
+
+			<div class="row" style="margin-top: 15px">
+				<div class="col-lg-2 col-lg-offset-2">
+					<strong>Data scadenza</strong>
+				</div>
+				<div class="col-lg-3">
+					<div class="form-group">
+						<div class='input-group date' id='datetimepicker5'>
+							<input ng-model="richiestaReteBean.dataScadenza" type='text' class="form-control" /> 
+							<!-- <span class="input-group-addon"> 
+								<span class="glyphicon glyphicon-calendar"></span> -->
+							</span>
+						</div>gg/mm/aaaa
+					</div>
+					<script type="text/javascript">
+				            $(function () {
+				                $('#datetimepicker5').datetimepicker({
+				                    defaultDate: "11/1/2013",
+				                    disabledDates: [
+				                        moment("12/25/2013"),
+				                        new Date(2013, 11 - 1, 21),
+				                        "11/22/2013 00:53"
+				                    ]
+				                });
+				            });
+				        </script>
+				</div>
+			</div>
+
+			<div class="row" style="margin-top: 15px">
+				<div class="col-lg-2 col-lg-offset-2">
+					<strong>Note del richiedente</strong>
+				</div>
+				<div class="col-lg-5">
+					<textarea ng-model="richiestaReteBean.note" class="form-control" rows="2" id="note"></textarea>
+				</div>
+			</div>
+
+			<div class="row" style="margin-top: 15px">
+				<div class="col-lg-2 col-lg-offset-2">
+					<strong>Allegato</strong>
+				</div>
+				<div class="col-lg-5">
+					<input  id="input" name="input" type="file">
+					<!-- multiple -->
+				</div>
+			</div>
+			<div class="row" style="margin-top: 5px">
+				<div class="col-lg-offset-4 col-lg-5">
+					<button ng-click="home.nuovaRichiesta()" class="btn btn-primary"
+						style="background-color: #5cb85c; border-color: #5cb85c">Allega</button>
+				</div>
+			</div>
+
+			<div class="row" style="margin-top: 15px">
+				<div class="col-lg-7 col-lg-offset-2">* Specificare se la
+					connessione richiesta permette l’accesso a dati personali,
+					sensibili o riservati. (Rif.to D. Lgs. 196/03 - Codice in materia
+					di protezione di dati personali)</div>
+
+				<div class="row">
+					<div class="col-lg-7 col-lg-offset-2" align="center">
+						<div ng-init="richiestaReteBean.datiSensibili=1">
+							<label  class="radio-inline"><input ng-model="richiestaReteBean.datiSensibili" type="radio"  value="1">si</label> 
+							<label class="radio-inline"> <input ng-model="richiestaReteBean.datiSensibili" type="radio"  value="2">no</label>
+						</div>	
+					</div>
+				</div>
+			</div>
+
+			<div class="row" style="margin-top: 15px; margin-bottom: 25px;">
+				<div class="col-lg-7 col-lg-offset-2"
+					style="border-color: rgb(255, 128, 64); border-style: dotted; border-width: thin">
+
+					<div align="right" style="margin-top: 5px;">
+						<button ng-click="home.nuovaRichiesta()" class="btn btn-default">Rimuovi
+							Sistema</button>
+						<button ng-click="home.nuovaRichiesta()" class="btn btn-default">Copia
+							IP Mittente in tutti i Sistemi</button>
+					</div>
+
+					<div class="row" style="margin-top: 10px;">
+						<div class="col-lg-4">
+							<strong>Proprietario sistema</strong>
+						</div>
+						<div class="col-lg-5">
+							<input type="text" class="form-control" id="responsabile">
+						</div>
+						<div class="col-sx-1">
+							<a class="glyphicon glyphicon-user"></a>
+						</div>
+					</div>
+
+					<div class="row" style="margin-top: 10px;" id="IpDemo">
+						<div class="col-lg-4">
+							<strong>IP Mittente</strong>
+						</div>
+						<div class="col-lg-8">
+							<input type="text" id="ip3" name="ip"
+								class="form-control col-lg-2"
+								style="width: 13%; margin-right: 3px"> <input
+								type="text" id="ip3" name="ip" class="form-control col-lg-2"
+								style="width: 13%; margin-right: 3px"> <input
+								type="text" id="ip3" name="ip" class="form-control col-lg-2"
+								style="width: 13%; margin-right: 3px"> <input
+								type="text" id="ip3" name="ip" class="form-control col-lg-2"
+								style="width: 13%; margin-right: 3px">
+
+						</div>
+					</div>
+
+					<div class="row" style="margin-top: 10px;" id="IpDemo">
+						<div class="col-lg-4">
+							<strong>IP Destinatario</strong>
+						</div>
+						<div class="col-lg-8">
+							<input type="text" id="ip3" name="ip"
+								class="form-control col-lg-2"
+								style="width: 13%; margin-right: 3px"> <input
+								type="text" id="ip3" name="ip" class="form-control col-lg-2"
+								style="width: 13%; margin-right: 3px"> <input
+								type="text" id="ip3" name="ip" class="form-control col-lg-2"
+								style="width: 13%; margin-right: 3px"> <input
+								type="text" id="ip3" name="ip" class="form-control col-lg-2"
+								style="width: 13%; margin-right: 3px">
+
+						</div>
+					</div>
+
+					<div class="row" style="margin-top: 10px;" id="IpDemo">
+						<div class="col-lg-4">
+							<strong>Porta Destinazione</strong>
+						</div>
+						<div class="col-lg-5">
+							<input type="text" class="form-control" id="portaDestinazione">
+						</div>
+					</div>
+
+					<div class="row" style="margin-top: 10px; margin-bottom: 10px;"
+						id="IpDemo">
+						<button ng-click="home.nuovaRichiesta()" class="btn btn-default">Visualizza
+							Subnet</button>
+					</div>
+
+					<div class="row" style="margin-bottom: 10px">
+						<div class="col-lg-4">
+							<strong>Subnet mask Mittente</strong>
+						</div>
+						<div class="col-lg-5">
+							<div class="form-group">
+								<label for="sel1"></label> <select class="" id="sel1">
+									<option>255.255.255.255</option>
+									<option>255.255.255.0</option>
+									<option>255.255.0.0</option>
+								</select>
+							</div>
+						</div>
+					</div>
+
+					<div class="row" style="margin-bottom: 10px">
+						<div class="col-lg-4">
+							<strong>Subnet mask Destinatario</strong>
+						</div>
+						<div class="col-lg-5">
+							<div class="form-group">
+								<label for="sel1"></label> <select class="" id="sel1">
+									<option>255.255.255.255</option>
+									<option>255.255.255.0</option>
+									<option>255.255.0.0</option>
+								</select>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+
+
+
+		</div>
+		</form>
+	</div>
+	<!-- /#wrapper -->
+
+	<!-- jQuery -->
+	<script src="../vendor/jquery/jquery.min.js"></script>
+
+	<!-- Bootstrap Core JavaScript -->
+	<script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+
+	<!-- Metis Menu Plugin JavaScript -->
+	<script src="../vendor/metisMenu/metisMenu.min.js"></script>
+
+	<!-- DataTables JavaScript -->
+	<script src="../vendor/datatables/js/jquery.dataTables.min.js"></script>
+	<script src="../vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+	<script src="../vendor/datatables-responsive/dataTables.responsive.js"></script>
+
+	<!-- Custom Theme JavaScript -->
+	<script src="../dist/js/sb-admin-2.js"></script>
+
+	<!-- Page-Level Demo Scripts - Tables - Use for reference -->
+	<script>
+    $(document).ready(function() {
+        $('#dataTables-example').DataTable({
+            responsive: true
+        });
+    });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+
+     <div id="wrapper">
+
+        
+
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">
+					</h1>
+                </div>
+            </div>
+
+            <div class="row">
+                <ul>
+                    <li ng-repeat="n in risultato">
+                        {{n.nodo}} <a href="" ng-click="toggle(n)">-</a>
+                        <ul ng-show="n.aperto">
+                            <li ng-repeat="f in n.foglie">{{f}}</li>
+                        </ul>
+                    </li>
+                </ul>
+
+
+            </div>
+           
+            
+            
+        </div>
+
+    </div> 
