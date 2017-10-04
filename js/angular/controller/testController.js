@@ -14,10 +14,9 @@ angular.module("richiesteReteApp").controller("testController", ['$scope', '$htt
     $scope.toggle = function(n){
         n.aperto=!n.aperto;
         if (n.imgAlbero == "./images/chiuso.png")
-        n.imgAlbero = "./images/aperto.png"
+            n.imgAlbero = "./images/aperto.png"
         else
-        n.imgAlbero = "./images/chiuso.png"
-        
+            n.imgAlbero = "./images/chiuso.png"
     }
 
     $scope.fogliaSelezionata = function(f){
@@ -27,9 +26,6 @@ angular.module("richiesteReteApp").controller("testController", ['$scope', '$htt
     function fSelezionata(f){
         return f.selezionato;
     }
-
-
-    $scope.pippo = "{color:'red'}";
 
     $scope.imgSelezioneNodo = function(n){
         if (statoSelezioneFigli(n)==1) return "./images/TuttoSelezione.png";
@@ -45,7 +41,6 @@ angular.module("richiesteReteApp").controller("testController", ['$scope', '$htt
             if (n.foglie[i].selezionato)almenoUnoSelezionato = true;
         }
 
-        console.log("tuttiSelezionati: " + tuttiSelezionati + ", almenoUnoSelezionato: " + almenoUnoSelezionato)
         if (tuttiSelezionati)return 1;
         if (!tuttiSelezionati && almenoUnoSelezionato) return 0;
         return -1

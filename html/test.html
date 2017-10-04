@@ -13,16 +13,18 @@
 
             <div class="row">
                 <ul style="list-style-type: none;">
-                    <li ng-repeat="n in risultato">
-                        <a href="" ><img src="{{imgNodo(n)}}"  ng-click="toggle(n)"></a>
-                        <img src="{{imgSelezioneNodo(n)}}" ng-click="cambiaSelezioneNodo(n)"> 
-                        <a href="">{{n.nodo}}</a>
-                        <ul style="list-style-type: none;" ng-show="n.aperto">
-                            <li ng-repeat="f in n.foglie"><img src="./images/foglia.png"> <img src="{{selezioneFoglia(f)}}" ng-click="cambiaSelezioneFoglia(f)"> {{f.nome}}</li>
-                        </ul>
-                    </li>
+                    <li><img src="./images/aperto.png"  ng-click="toggle(n)">Tutto</li>    
+                    <ul style="list-style-type: none;">
+                        <li ng-repeat="n in risultato">
+                            <a href="" ><img src="{{imgNodo(n)}}"  ng-click="toggle(n)"></a>
+                            <img src="{{imgSelezioneNodo(n)}}" ng-click="cambiaSelezioneNodo(n)"> 
+                            <a href="">{{n.nodo}}</a>
+                            <ul style="list-style-type: none;" ng-show="n.aperto">
+                                <li ng-repeat="f in n.foglie"><img src="./images/foglia.png"> <img src="{{selezioneFoglia(f)}}" ng-click="cambiaSelezioneFoglia(f)"> {{f.nome}}</li>
+                            </ul>
+                        </li>
+                    </ul>
                 </ul>
-
 
             </div>
            
