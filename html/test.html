@@ -18,17 +18,17 @@
                 <li ng-repeat="r in risultato">
                     <img src="{{imgNodo(r)}}" style="width:15px;" ng-click="toggle(r)">
                     <img src="{{imgSelezioneNodo(r)}}" style="width:15px;" ng-click="cambiaSelezioneNodo(r)"> 
-                    {{r.nome}}
+                    <i class="fa fa-folder" style="font-size:17px;color:#23527c;" aria-hidden="true"></i> {{r.nome}}
                     <ul style="list-style-type: none;" class="animate-show-hide" ng-show="r.aperto">
                             <li ng-repeat="n in r.figli">
                                 <a href="" ><img src="{{imgNodo(n)}}" style="width:15px;" ng-click="toggle(n)"></a>
                                 <img src="{{imgSelezioneNodo(n)}}" style="width:15px;" ng-click="cambiaSelezioneNodo(n)"> 
-                                {{n.nome}}
+                                <i class="fa fa-folder" style="font-size:17px;color:#23527c;" aria-hidden="true"></i> {{n.nome}}
                                 <ul style="list-style-type: none;" class="animate-show-hide" ng-show="n.aperto">
                                     <li ng-repeat="f in n.figli">
                                         
                                         <img src="{{imgSelezioneNodo(f)}}" style="width:15px;" ng-click="cambiaSelezioneNodo(f)"> 
-                                        {{f.nome}}
+                                        <i class="fa fa-leaf" style="font-size:17px;color:#23527c;" aria-hidden="true"></i> {{f.nome}}
                                     </li>
                                 </ul>
                             </li>
