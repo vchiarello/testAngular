@@ -7,7 +7,7 @@ angular.module("richiesteReteApp").controller("testController", ['$scope', '$htt
 	
 	init();
 
-   $http.get('json/contentTest4.json').success(function(response) {
+   $http.get('json/contentTest5.json').success(function(response) {
         $scope.risultato= response.data;
     });
 
