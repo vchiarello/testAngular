@@ -1,1 +1,1 @@
-var app = angular.module("richiesteReteApp", ["ui.router", "ngCookies", "cgBusy"]);
+var app = angular.module("richiesteReteApp", ["ui.router", "ngCookies", "cgBusy","ngAnimate"]);

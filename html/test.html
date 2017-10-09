@@ -10,24 +10,28 @@
         </div>
 
         <div class="row">
-            <ul style="list-style-type: none;">
+                Show: <input type="checkbox" ng-model="checked" aria-label="Toggle ngShow"><br />
+                <div class="check-element animate-show-hide" ng-show="checked">
+                  I show up when your checkbox is checked.
+                </div>
+                <ul style="list-style-type: none;font-size:10pt;">
                 <li ng-repeat="r in risultato">
-                    <img src="{{imgNodo(r)}}"  ng-click="toggle(r)">
-                    <img src="{{imgSelezioneNodo(r)}}" ng-click="cambiaSelezioneNodo(r)"> 
+                    <img src="{{imgNodo(r)}}" style="width:15px;" ng-click="toggle(r)">
+                    <img src="{{imgSelezioneNodo(r)}}" style="width:15px;" ng-click="cambiaSelezioneNodo(r)"> 
                     {{r.nome}}
-                    <ul style="list-style-type: none;" ng-show="r.aperto">
+                    <ul style="list-style-type: none;" class="animate-show-hide" ng-show="r.aperto">
                             <li ng-repeat="n in r.figli">
-                                <a href="" ><img src="{{imgNodo(n)}}"  ng-click="toggle(n)"></a>
-                                <img src="{{imgSelezioneNodo(n)}}" ng-click="cambiaSelezioneNodo(n)"> 
+                                <a href="" ><img src="{{imgNodo(n)}}" style="width:15px;" ng-click="toggle(n)"></a>
+                                <img src="{{imgSelezioneNodo(n)}}" style="width:15px;" ng-click="cambiaSelezioneNodo(n)"> 
                                 {{n.nome}}
-                                <ul style="list-style-type: none;" ng-show="n.aperto">
-                                        <li ng-repeat="f in n.figli">
-                                            <a href="" ><img src="{{imgNodo(f)}}"  ng-click="toggle(f)"></a>
-                                            <img src="{{imgSelezioneNodo(f)}}" ng-click="cambiaSelezioneNodo(f)"> 
-                                            {{f.nome}}
-                                        </li>
-                                    </ul>
-                                </li>
+                                <ul style="list-style-type: none;" class="animate-show-hide" ng-show="n.aperto">
+                                    <li ng-repeat="f in n.figli">
+                                        
+                                        <img src="{{imgSelezioneNodo(f)}}" style="width:15px;" ng-click="cambiaSelezioneNodo(f)"> 
+                                        {{f.nome}}
+                                    </li>
+                                </ul>
+                            </li>
                         </ul>
                     </li>    
             </ul>
